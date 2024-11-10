@@ -5,10 +5,6 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Database Setup](#database-setup)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
