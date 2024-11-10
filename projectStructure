@@ -1,0 +1,28 @@
+onlineCabSystem/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── OnlineCabSystem/
+│   │   │           ├── controllers/        # Contains classes handling requests and responses
+│   │   │           ├── models/             # Contains model classes (e.g., User, Cab, Booking)
+│   │   │           ├── services/            # Contains service classes for business logic
+│   │   │           ├── utils/               # Contains utility classes (e.g., DatabaseConnection)
+│   │   │           └── main/                # Main application entry point (e.g., Application.java)
+│   │   ├── resources/
+│   │   │   ├── database.properties           # Database connection properties
+│   │   │   └── cab_booking.sql               # SQL script to set up the database schema
+│   │   └── webapp/                           # Web resources (HTML, CSS, JS)
+│   │       ├── index.html                    # Main HTML file
+│   │       ├── css/                          # Stylesheets
+│   │       ├── js/                           # JavaScript files
+│   │       └── images/                       # Images used in the web app
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── OnlineCabSystem/
+│                   └── tests/                # Contains test classes for unit testing
+├── lib/                                       # External libraries (e.g., JDBC driver .jar files)
+├── .gitignore                                  # Files and directories to ignore by Git
+├── README.md                                   # Project overview and documentation
+└── LICENSE                                      # Project license information
