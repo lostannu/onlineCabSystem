@@ -4,44 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Cab Booking System</title>
-    <link rel="stylesheet" href="css/styles.css">  <!-- Link to CSS file -->
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJwP+Y1jpG9r+KnujsqfP0gFA6fjMjOjzVsY38qb+lxvM5l/Ki08GRQ+BYFz" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!-- Link to custom CSS file -->
 </head>
 <body>
-    <div class="container">
-        <h2>Cab Booking Form</h2>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Cab Booking Form</h2>
         
         <!-- Booking Form -->
-        <form id="bookingForm" name="bookingForm" onsubmit="return validateForm()">
+        <form id="bookingForm" name="bookingForm" onsubmit="return validateForm()" class="p-4 border rounded shadow-sm">
             
             <!-- Pickup Location -->
-            <label for="pickupLocation">Pickup Location:</label>
-            <input type="text" id="pickupLocation" name="pickupLocation" placeholder="Enter pickup location">
-            <span id="pickupError" class="error"></span>
+            <div class="mb-3">
+                <label for="pickupLocation" class="form-label">Pickup Location</label>
+                <input type="text" class="form-control" id="pickupLocation" name="pickupLocation" placeholder="Enter pickup location">
+                <div id="pickupError" class="text-danger"></div>
+            </div>
 
             <!-- Drop-off Location -->
-            <label for="dropoffLocation">Drop-off Location:</label>
-            <input type="text" id="dropoffLocation" name="dropoffLocation" placeholder="Enter drop-off location">
-            <span id="dropoffError" class="error"></span>
+            <div class="mb-3">
+                <label for="dropoffLocation" class="form-label">Drop-off Location</label>
+                <input type="text" class="form-control" id="dropoffLocation" name="dropoffLocation" placeholder="Enter drop-off location">
+                <div id="dropoffError" class="text-danger"></div>
+            </div>
 
             <!-- Pickup Time -->
-            <label for="pickupTime">Pickup Time:</label>
-            <input type="datetime-local" id="pickupTime" name="pickupTime">
-            <span id="pickupTimeError" class="error"></span>
+            <div class="mb-3">
+                <label for="pickupTime" class="form-label">Pickup Time</label>
+                <input type="datetime-local" class="form-control" id="pickupTime" name="pickupTime">
+                <div id="pickupTimeError" class="text-danger"></div>
+            </div>
 
             <!-- Contact Number -->
-            <label for="contactNumber">Contact Number:</label>
-            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter contact number">
-            <span id="contactNumberError" class="error"></span>
+            <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter contact number">
+                <div id="contactNumberError" class="text-danger"></div>
+            </div>
 
             <!-- Submit Button -->
-            <button type="submit">Book Now</button>
+            <button type="submit" class="btn btn-primary w-100">Book Now</button>
         </form>
 
         <!-- Success Message -->
-        <div id="successMessage" class="success"></div>
+        <div id="successMessage" class="text-center mt-3 text-success"></div>
     </div>
 
-    <!-- JavaScript for Validation -->
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybK6E0jR8P5hTz6tPxbrYtF6kcJYw4VtZOJ3BCsw2P0p/We/tb" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0T3Jqvx+iqF84SBR74wzp5XK4rrm5ygT9B7DJtS3J0p/2rj8" crossorigin="anonymous"></script>
+
+    <!-- Custom JS Validation -->
     <script src="js/validation.js"></script>
 </body>
 </html>
