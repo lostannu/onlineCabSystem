@@ -1,86 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Cab Booking System</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">  <!-- Link to CSS file -->
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <h1>Online Cab Booking System</h1>
-            <nav>
-                <ul>
-                    <li><a href="#login">Login</a></li>
-                    <li><a href="#book-cab">Book a Cab</a></li>
-                    <li><a href="#available-cabs">Available Cabs</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h2>Cab Booking Form</h2>
+        
+        <!-- Booking Form -->
+        <form id="bookingForm" name="bookingForm" onsubmit="return validateForm()">
+            
+            <!-- Pickup Location -->
+            <label for="pickupLocation">Pickup Location:</label>
+            <input type="text" id="pickupLocation" name="pickupLocation" placeholder="Enter pickup location">
+            <span id="pickupError" class="error"></span>
 
-    <section id="login">
-        <div class="container">
-            <h2>User Login</h2>
-            <form action="#" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </section>
+            <!-- Drop-off Location -->
+            <label for="dropoffLocation">Drop-off Location:</label>
+            <input type="text" id="dropoffLocation" name="dropoffLocation" placeholder="Enter drop-off location">
+            <span id="dropoffError" class="error"></span>
 
-    <section id="book-cab">
-        <div class="container">
-            <h2>Book a Cab</h2>
-            <form action="#" method="POST">
-                <input type="text" name="pickup-location" placeholder="Pickup Location" required>
-                <input type="text" name="dropoff-location" placeholder="Dropoff Location" required>
-                <input type="datetime-local" name="pickup-time" required>
-                <button type="submit">Book Cab</button>
-            </form>
-        </div>
-    </section>
+            <!-- Pickup Time -->
+            <label for="pickupTime">Pickup Time:</label>
+            <input type="datetime-local" id="pickupTime" name="pickupTime">
+            <span id="pickupTimeError" class="error"></span>
 
-    <section id="available-cabs">
-        <div class="container">
-            <h2>Available Cabs</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cab ID</th>
-                        <th>Driver Name</th>
-                        <th>License Plate</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>ABC1234</td>
-                        <td>Available</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>XYZ5678</td>
-                        <td>Available</td>
-                    </tr>
-                    <!-- Add more rows dynamically -->
-                </tbody>
-            </table>
-        </div>
-    </section>
+            <!-- Contact Number -->
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter contact number">
+            <span id="contactNumberError" class="error"></span>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Online Cab Booking System. All Rights Reserved.</p>
-        </div>
-    </footer>
+            <!-- Submit Button -->
+            <button type="submit">Book Now</button>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success"></div>
+    </div>
+
+    <!-- JavaScript for Validation -->
+    <script src="js/validation.js"></script>
 </body>
-
 </html>
