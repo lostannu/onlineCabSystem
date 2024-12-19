@@ -3,24 +3,61 @@ package main.java.com.onlinecab;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+import java.io.InputStream;
 
 public class DatabaseConnection {
-    // Database connection details
-    private static final String URL = "jdbc:mysql://localhost:3306/online_cab_system";  // Replace with your DB name
-    private static final String USER = "root";  // Replace with your MySQL username
-    private static final String PASSWORD = "1234";  // Replace with your MySQL password
+    // Database connection details (loaded from a properties file)
+    private static String URL;
+    private static String USER;
+    private static String PASSWORD;
 
-    // Method to establish a connection to the database
-    public static Connection getConnection() throws SQLException {
+    private static Connection connection = null;
+
+    static {
         try {
-            // Load the MySQL JDBC Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Load database configuration from properties file
+            InputStream input = DatabaseConnection.class.getClassLoader().getResourceAsStream("database.properties");
+            if (input == null) {
+                throw new RuntimeException("Unable to find database.properties");
+            }
 
-            // Return the connection object
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new SQLException("Database connection failed: " + e.getMessage());
+            Properties properties = new Properties();
+            properties.load(input);
+
+            URL = properties.getProperty("db.url");
+            USER = properties.getProperty("db.user");
+            PASSWORD = properties.getProperty("db.password");
+
+            // Load the JDBC Driver
+            Class.forName(properties.getProperty("db.driver"));
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to initialize database connection: " + e.getMessage());
+        }
+    }
+
+    // Method to establish or retrieve the existing connection
+    public static Connection getConnection() throws SQLException {
+        if (connection == null || connection.isClosed()) {
+            try {
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            } catch (SQLException e) {
+                throw new SQLException("Error establishing database connection: " + e.getMessage());
+            }
+        }
+        return connection;
+    }
+
+    // Method to close the database connection
+    public static void closeConnection() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+                System.out.println("Database connection closed successfully.");
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to close database connection: " + e.getMessage());
         }
     }
 }
