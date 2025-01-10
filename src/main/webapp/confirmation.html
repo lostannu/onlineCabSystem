@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Booking Confirmation</h1>
+  <div id="confirmationDetails">
+    <h2>Your Booking Details</h2>
+    <p><strong>Pickup Location:</strong> <span id="pickupLocation"></span></p>
+    <p><strong>Dropoff Location:</strong> <span id="dropoffLocation"></span></p>
+    <p><strong>Date:</strong> <span id="bookingDate"></span></p>
+    <p><strong>Time:</strong> <span id="bookingTime"></span></p>
+    <p><strong>Cab Type:</strong> <span id="cabType"></span></p>
+    <p><strong>Price:</strong> <span id="cabPrice"></span></p>
+  </div>
+  <button id="proceedToPayment">Proceed to Payment</button>
+  <p><a href="index.html">Back to Home</a></p>
+</div>
+
+<script>
+  // Simulating data retrieval from the previous booking step
+  const bookingData = {
+      pickup: "123 Main St, City",
+      dropoff: "456 Elm St, City",
+      date: "2023-10-15",
+      time: "14:30",
+      cabType: "Sedan",
+      price: "$20"
+  };
+
+  // Populate the confirmation details
+  document.getElementById('pickupLocation').textContent = bookingData.pickup;
+  document.getElementById('dropoffLocation').textContent = bookingData.dropoff;
+  document.getElementById('bookingDate').textContent = bookingData.date;
+  document.getElementById('bookingTime').textContent = bookingData.time;
+  document.getElementById('cabType').textContent = bookingData.cabType;
+  document.getElementById('cabPrice').textContent = bookingData.price;
+
+  // Handle the payment button click
+  document.getElementById('proceedToPayment').addEventListener('click', function() {
+      window.location.href = 'payment.html'; // Redirect to payment page
+  });
+</script>
+</body>
+</html>
