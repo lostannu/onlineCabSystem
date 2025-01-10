@@ -1,0 +1,43 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+    
+    <!-- Servlet for User Registration -->
+    <servlet>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <servlet-class>UserRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for User Login -->
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for Cab Booking -->
+    <servlet>
+        <servlet-name>CabBookingServlet</servlet-name>
+        <servlet-class>CabBookingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CabBookingServlet</servlet-name>
+        <url-pattern>/book</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Servlet for Booking Details -->
+    <servlet>
+        <servlet-name>BookingDetailsServlet</servlet-name>
+        <servlet-class>BookingDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingDetailsServlet</servlet-name>
+        <url-pattern>/details</url-pattern>
+    </servlet-mapping>
+
+</web-app>
