@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #ff5733, #33c1ff, #33ff57, #ff33a1); /* Multi-color gradient background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Welcome Container Styles */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.5)); /* Light gradient background */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-container h1 {
+    font-size: 3em; /* Larger font size for the welcome message */
+    color: #007bff; /* Primary color for the heading */
+    margin-bottom: 10px;
+}
+
+.welcome-container p {
+    font-size: 1.2em; /* Slightly larger font size for the paragraph */
+    color: #333; /* Dark color for text */
+}
+
+.welcome-container a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 0;
+    transition: color 0.3s; /* Transition for link hover effect */
+}
+
+.welcome-container a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+/* Container Styles for Other Pages */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #333; /* Dark color for headings */
+    animation: slideIn 0.5s ease-in-out; /* Slide-in animation */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #ff5733; /* Red color for labels */
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #33c1ff; /* Blue border for inputs */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for focus effect */
+}
+
+input:focus {
+    border-color: #33ff57; /* Green on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 255, 87, 0.5); /* Shadow on focus */
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
+    background-color: #ff33a1; /* Pink button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+    animation: bounceIn 0.5s ease-in-out; /* Bounce-in animation */
+}
+
+button:hover {
+    background-color: #ff1a75; /* Darker pink on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Paragraph and Link Styles */
+p {
+    text-align: center;
+}
+
+a {
+    color: #33c1ff; /* Blue color for links */
+    text-decoration: none;
+    transition: color 0.3s; /* Transition for link hover effect */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff5733; /* Red on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* List Styles */
+#cabList {
+    list-style-type: none;
+    padding ```css
+: 0;
+}
+
+#cabList li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Light gray border for list items */
+}
+
+#cabList li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
